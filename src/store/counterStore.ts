@@ -8,6 +8,6 @@ type storeProps = {
 
 export const useCounterStore = create<storeProps>( ( set )  => ( {
     count: 0,
-    onIncrement: () => set( () => ( { count: 1 } ) ),
-    onDecrement: () => set( () => ( { count: -1 } ) ),
+    onIncrement: () => set( (state) => ( { count:  state.count + 1} ) ),
+    onDecrement: () => set( (state) => ( { count:  state.count - 1} ) ),
 } ));
